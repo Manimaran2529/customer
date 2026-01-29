@@ -22,7 +22,3 @@ mall["Gender"]=mall["Gender"].map({"Male":0,"Female":1})
 #sns.histplot(mall["Annual Income (k$)"])
 #plt.show()
 
-pt=PowerTransformer(method="yeo-johnson")
-
-
-power=pt.fit_transform(x)
