@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.cluster import KMeans
 from matplotlib import pyplot as plt
 from sklearn.preprocessing import PowerTransformer
 import seaborn as sns
@@ -22,3 +22,24 @@ pt=PowerTransformer(method="yeo-johnson")
 mall[y]=pt.fit_transform(mall[y])
 
 x=mall[["Gender","Age","Annual Income (k$)","Spending Score (1-100)"]]
+
+
+
+
+
+
+k=KMeans(
+    n_clusters=4,random_state=42
+)
+
+mall["cluster"]=k.fit_predict(x)
+
+sns.scatterplot(
+    data=mall,
+    x="Annual Income (k$)",
+    y="Spending Score (1-100)",
+    hue="cluster",
+    palette="tab10"
+)
+plt.title("Customer Clusters (K-Means)")
+plt.show()
