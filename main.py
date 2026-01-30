@@ -13,14 +13,12 @@ mall["Gender"]=mall["Gender"].map({"Male":1,"Female":0})
 mall=mall.drop(columns=["CustomerID"])
 #print(mall.head(10))
 
-x=mall[["Gender","Age","Annual Income (k$)","Spending Score (1-100)"]]
+
  
 
-y=mall[["Annual Income (k$)","Spending Score (1-100)"]]
+y=["Annual Income (k$)","Spending Score (1-100)"]
 
 pt=PowerTransformer(method="yeo-johnson")
-x_train=pt.fit_transform(y)
-x_test=pt.transform(y)
+mall[y]=pt.fit_transform(mall[y])
 
-
-print(x_train)
+x=mall[["Gender","Age","Annual Income (k$)","Spending Score (1-100)"]]
