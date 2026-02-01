@@ -4,8 +4,7 @@ from matplotlib import pyplot as plt
 from sklearn.preprocessing import PowerTransformer
 import seaborn as sns
 
-mall=pd.read_csv("Mall_Customers.csv") asascsdcscscsdcscsdcsd
-
+mall=pd.read_csv("Mall_Customers.csv")
 
 
 
