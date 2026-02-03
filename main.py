@@ -42,4 +42,4 @@ sns.scatterplot(
     palette="tab10"
 )
 plt.title("Customer Clusters (K-Means)")
-plt.show()
+pl
